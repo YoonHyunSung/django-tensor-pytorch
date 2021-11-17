@@ -1,0 +1,175 @@
+ case_id,province,city,group,infection_case,confirmed
+1000001,Seoul,Yongsan-gu,True,Itaewon Clubs,139
+1000002,Seoul,Gwanak-gu,True,Richway,119
+1000003,Seoul,Guro-gu,True,Guro-gu Call Center,95
+1000004,Seoul,Yangcheon-gu,True,Yangcheon Table Tennis Club,43
+1000005,Seoul,Dobong-gu,True,Day Care Center,43
+1000006,Seoul,Guro-gu,True,Manmin Central Church,41
+1000007,Seoul,othercity,True,SMR Newly Planted Churches Group,36
+1000008,Seoul,Dongdaemun-gu,True,Dongan Church,17
+1000009,Seoul,othercity,True,Coupang Logistics Center,25
+1000010,Seoul,Gwanak-gu,True,Wangsung Church,30
+1000011,Seoul,Eunpyeong-gu,True,Eunpyeong St. Mary's Hospital,14
+1000012,Seoul,Seongdong-gu,True,Seongdong-gu APT,13
+1000013,Seoul,Jongno-gu,True,Jongno Community Center,10
+1000014,Seoul,Gangnam-gu,True,Samsung Medical Center,7
+1000015,Seoul,Jung-gu,True,Jung-gu Fashion Company,7
+1000016,Seoul,Seodaemun-gu,True,Yeonana News Class,5
+1000017,Seoul,Jongno-gu,True,Korea Campus Crusade of Christ,7
+1000018,Seoul,Gangnam-gu,True,Gangnam Yeoksam-dong gathering,6
+1000019,Seoul,othercity,True,Daejeon door-to-door sales,1
+1000020,Seoul,Geumcheon-gu,True,Geumcheon-gu rice milling machine manufacture,6
+1000021,Seoul,othercity,True,Shincheonji Church,8
+1000022,Seoul,othercity,True,Guri Collective Infection,5
+1000023,Seoul,Jung-gu,True,KB Life Insurance,13
+1000024,Seoul,Yeongdeungpo-gu,True,Yeongdeungpo Learning Institute,3
+1000025,Seoul,Gangnam-gu,True,Gangnam Dongin Church,1
+1000026,Seoul,Yangcheon-gu,True,Biblical Language study meeting,3
+1000027,Seoul,Seocho-gu,True,Seocho Family,5
+1000028,Seoul,othercity,True,Anyang Gunpo Pastors Group,1
+1000029,Seoul,Gangnam-gu,True,Samsung Fire & Marine Insurance,4
+1000030,Seoul,Gangseo-gu,True,SJ Investment Call Center,0
+1000031,Seoul,othercity,True,Yongin Brothers,4
+1000032,Seoul,Jung-gu,True,Seoul City Hall Station safety worker,3
+1000033,Seoul,othercity,True,Uiwang Logistics Center,2
+1000034,Seoul,unknown,True,Orange Life,1
+1000035,Seoul,Guro-gu,True,Daezayeon Korea,3
+1000036,Seoul,unknown,False,overseas inflow,298
+1000037,Seoul,unknown,False,contact with patient,162
+1000038,Seoul,unknown,False,etc,100
+1100001,Busan,Dongnae-gu,True,Onchun Church,39
+1100002,Busan,othercity,True,Shincheonji Church,12
+1100003,Busan,Suyeong-gu,True,Suyeong-gu Kindergarten,5
+1100004,Busan,Haeundae-gu,True,Haeundae-gu Catholic Church,6
+1100005,Busan,Jin-gu,True,Jin-gu Academy,4
+1100006,Busan,othercity,True,Itaewon Clubs,4
+1100007,Busan,othercity,True,Cheongdo Daenam Hospital,1
+1100008,Busan,unknown,False,overseas inflow,36
+1100009,Busan,unknown,False,contact with patient,19
+1100010,Busan,unknown,False,etc,30
+1200001,Daegu,Nam-gu,True,Shincheonji Church,4511
+1200002,Daegu,Dalseong-gun,True,Second Mi-Ju Hospital,196
+1200003,Daegu,Seo-gu,True,Hansarang Convalescent Hospital,124
+1200004,Daegu,Dalseong-gun,True,Daesil Convalescent Hospital,101
+1200005,Daegu,Dong-gu,True,Fatima Hospital,39
+1200006,Daegu,othercity,True,Itaewon Clubs,2
+1200007,Daegu,othercity,True,Cheongdo Daenam Hospital,2
+1200008,Daegu,unknown,False,overseas inflow,41
+1200009,Daegu,unknown,False,contact with patient,917
+1200010,Daegu,unknown,False,etc,747
+1300001,Gwangju,Dong-gu,True,Gwangneuksa Temple,5
+1300002,Gwangju,othercity,True,Shincheonji Church,9
+1300003,Gwangju,unknown,False,overseas inflow,23
+1300004,Gwangju,unknown,False,contact with patient,5
+1300005,Gwangju,unknown,False,etc,1
+1400001,Incheon,othercity,True,Itaewon Clubs,53
+1400002,Incheon,othercity,True,Coupang Logistics Center,42
+1400003,Incheon,othercity,True,Guro-gu Call Center,20
+1400004,Incheon,othercity,True,Shincheonji Church,2
+1400005,Incheon,unknown,False,overseas inflow,68
+1400006,Incheon,unknown,False,contact with patient,6
+1400007,Incheon,unknown,False,etc,11
+1500001,Daejeon,unknown,True,Door-to-door sales in Daejeon,55
+1500002,Daejeon,Seo-gu,True,Dunsan Electronics Town,13
+1500003,Daejeon,Seo-gu,True,Orange Town,7
+1500004,Daejeon,Seo-gu,True,Dreaming Church,4
+1500005,Daejeon,Seo-gu,True,Korea Forest Engineer Institute,3
+1500006,Daejeon,othercity,True,Shincheonji Church,2
+1500007,Daejeon,othercity,True,Seosan-si Laboratory,2
+1500008,Daejeon,unknown,False,overseas inflow,15
+1500009,Daejeon,unknown,False,contact with patient,15
+1500010,Daejeon,unknown,False,etc,15
+1600001,Ulsan,othercity,True,Shincheonji Church,16
+1600002,Ulsan,unknown,False,overseas inflow,25
+1600003,Ulsan,unknown,False,contact with patient,3
+1600004,Ulsan,unknown,False,etc,7
+1700001,Sejong,Sejong,True,Ministry of Oceans and Fisheries,31
+1700002,Sejong,Sejong,True,gym facility in Sejong,8
+1700003,Sejong,othercity,True,Shincheonji Church,1
+1700004,Sejong,unknown,False,overseas inflow,5
+1700005,Sejong,unknown,False,contact with patient,3
+1700006,Sejong,unknown,False,etc,1
+2000001,Gyeonggi-do,Seongnam-si,True,River of Grace Community Church,67
+2000002,Gyeonggi-do,Bucheon-si,True,Coupang Logistics Center,67
+2000003,Gyeonggi-do,othercity,True,Itaewon Clubs,59
+2000004,Gyeonggi-do,othercity,True,Richway,58
+2000005,Gyeonggi-do,Uijeongbu-si,True,Uijeongbu St. Mary’s Hospital,50
+2000006,Gyeonggi-do,othercity,True,Guro-gu Call Center,50
+2000007,Gyeonggi-do,othercity,True,Shincheonji Church,29
+2000008,Gyeonggi-do,othercity,True,Yangcheon Table Tennis Club,28
+2000009,Gyeonggi-do,unknown,True,SMR Newly Planted Churches Group,25
+2000010,Gyeonggi-do,Seongnam-si,True,Bundang Jesaeng Hospital,22
+2000011,Gyeonggi-do,Anyang-si,True,Anyang Gunpo Pastors Group,22
+2000012,Gyeonggi-do,Suwon-si,True,Lotte Confectionery logistics center,15
+2000013,Gyeonggi-do,Anyang-si,True,Lord Glory Church,17
+2000014,Gyeonggi-do,Suwon-si,True,Suwon Saeng Myeong Saem Church,10
+2000015,Gyeonggi-do,othercity,True,Korea Campus Crusade of Christ,7
+2000016,Gyeonggi-do,othercity,True,Geumcheon-gu rice milling machine manufacture,6
+2000017,Gyeonggi-do,othercity,True,Wangsung Church,6
+2000018,Gyeonggi-do,othercity,True,Seoul City Hall Station safety worker,5
+2000019,Gyeonggi-do,Seongnam-si,True,Seongnam neighbors gathering,5
+2000020,Gyeonggi-do,unknown,False,overseas inflow,305
+2000021,Gyeonggi-do,unknown,False,contact with patient,63
+2000022,Gyeonggi-do,unknown,False,etc,84
+3000001,Gangwon-do,othercity,True,Shincheonji Church,17
+3000002,Gangwon-do,othercity,True,Uijeongbu St. Mary’s Hospital,10
+3000003,Gangwon-do,Wonju-si,True,Wonju-si Apartments,4
+3000004,Gangwon-do,othercity,True,Richway,4
+3000005,Gangwon-do,othercity,True,Geumcheon-gu rice milling machine manufacture,4
+3000006,Gangwon-do,unknown,False,overseas inflow,16
+3000007,Gangwon-do,unknown,False,contact with patient,0
+3000008,Gangwon-do,unknown,False,etc,7
+4000001,Chungcheongbuk-do,Goesan-gun,True,Goesan-gun Jangyeon-myeon,11
+4000002,Chungcheongbuk-do,othercity,True,Itaewon Clubs,9
+4000003,Chungcheongbuk-do,othercity,True,Guro-gu Call Center,2
+4000004,Chungcheongbuk-do,othercity,True,Shincheonji Church,6
+4000005,Chungcheongbuk-do,unknown,False,overseas inflow,13
+4000006,Chungcheongbuk-do,unknown,False,contact with patient,8
+4000007,Chungcheongbuk-do,unknown,False,etc,11
+4100001,Chungcheongnam-do,Cheonan-si,True,gym facility in Cheonan,103
+4100002,Chungcheongnam-do,othercity,True,Door-to-door sales in Daejeon,10
+4100003,Chungcheongnam-do,Seosan-si,True,Seosan-si Laboratory,9
+4100004,Chungcheongnam-do,othercity,True,Richway,3
+4100005,Chungcheongnam-do,othercity,True,Eunpyeong-Boksagol culture center,3
+4100006,Chungcheongnam-do,unknown,False,overseas inflow,16
+4100007,Chungcheongnam-do,unknown,False,contact with patient,2
+4100008,Chungcheongnam-do,unknown,False,etc,12
+5000001,Jeollabuk-do,othercity,True,Itaewon Clubs,2
+5000002,Jeollabuk-do,othercity,True,Door-to-door sales in Daejeon,3
+5000003,Jeollabuk-do,othercity,True,Shincheonji Church,1
+5000004,Jeollabuk-do,unknown,False,overseas inflow,12
+5000005,Jeollabuk-do,unknown,False,etc,5
+5100001,Jeollanam-do,Muan-gun,True,Manmin Central Church,2
+5100002,Jeollanam-do,othercity,True,Shincheonji Church,1
+5100003,Jeollanam-do,unknown,False,overseas inflow,14
+5100004,Jeollanam-do,unknown,False,contact with patient,4
+5100005,Jeollanam-do,unknown,False,etc,4
+6000001,Gyeongsangbuk-do,othercity,True,Shincheonji Church,566
+6000002,Gyeongsangbuk-do,Cheongdo-gun,True,Cheongdo Daenam Hospital,119
+6000003,Gyeongsangbuk-do,Bonghwa-gun,True,Bonghwa Pureun Nursing Home,68
+6000004,Gyeongsangbuk-do,Gyeongsan-si,True,Gyeongsan Seorin Nursing Home,66
+6000005,Gyeongsangbuk-do,othercity,True,Pilgrimage to Israel,41
+6000006,Gyeongsangbuk-do,Yechun-gun,True,Yechun-gun,40
+6000007,Gyeongsangbuk-do,Chilgok-gun,True,Milal Shelter,36
+6000008,Gyeongsangbuk-do,Gyeongsan-si,True,Gyeongsan Jeil Silver Town,17
+6000009,Gyeongsangbuk-do,Gyeongsan-si,True,Gyeongsan Cham Joeun Community Center,16
+6000010,Gyeongsangbuk-do,Gumi-si,True,Gumi Elim Church,10
+6000011,Gyeongsangbuk-do,unknown,False,overseas inflow,22
+6000012,Gyeongsangbuk-do,unknown,False,contact with patient,190
+6000013,Gyeongsangbuk-do,unknown,False,etc,133
+6100001,Gyeongsangnam-do,othercity,True,Shincheonji Church,32
+6100002,Gyeongsangnam-do,Geochang-gun,True,Geochang Church,10
+6100003,Gyeongsangnam-do,Jinju-si,True,Wings Tower,9
+6100004,Gyeongsangnam-do,Geochang-gun,True,Geochang-gun Woongyang-myeon,8
+6100005,Gyeongsangnam-do,Changwon-si,True,Hanmaeum Changwon Hospital,7
+6100006,Gyeongsangnam-do,Changnyeong-gun,True,Changnyeong Coin Karaoke,7
+6100007,Gyeongsangnam-do,Yangsan-si,True,Soso Seowon,3
+6100008,Gyeongsangnam-do,othercity,True,Itaewon Clubs,2
+6100009,Gyeongsangnam-do,othercity,True,Onchun Church,2
+6100010,Gyeongsangnam-do,unknown,False,overseas inflow,26
+6100011,Gyeongsangnam-do,unknown,False,contact with patient,6
+6100012,Gyeongsangnam-do,unknown,False,etc,20
+7000001,Jeju-do,unknown,False,overseas inflow,14
+7000002,Jeju-do,unknown,False,contact with patient,0
+7000003,Jeju-do,unknown,False,etc,4
+7000004,Jeju-do,othercity,True,Itaewon Clubs,1
