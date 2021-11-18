@@ -18,4 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('api/crwaling/', include('crwaling_live.urls')),
+    path('api/prediction/', include('prediction.urls')),
 ]
