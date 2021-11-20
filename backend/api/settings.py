@@ -83,9 +83,9 @@ WSGI_APPLICATION = 'api.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'maradb',
-        'USER': 'maradb',
-        'PASSWORD': 'maradb',
+        'NAME': 'mariadb',
+        'USER': 'root',
+        'PASSWORD': 'root',
         'HOST': '127.0.0.1',
         'PORT': '3306'
 

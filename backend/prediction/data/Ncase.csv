@@ -1,4 +1,4 @@
- case_id,province,city,group,infection_case,confirmed
+case_id,province,city,group,infection_case,confirmed
 1000001,Seoul,Yongsan-gu,True,Itaewon Clubs,139
 1000002,Seoul,Gwanak-gu,True,Richway,119
 1000003,Seoul,Guro-gu,True,Guro-gu Call Center,95

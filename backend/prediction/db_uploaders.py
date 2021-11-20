@@ -17,7 +17,7 @@ class DbUploader():
         vo = ValueObject()
         reader = Reader()
         self.printer =Printer()
-        vo.context = 'data/'
+        vo.context = 'prediction/data/'
         vo.fname = payload
         self.csvfile = reader.new_file(vo)
         return self.csvfile
@@ -28,10 +28,17 @@ class DbUploader():
         with open(self.new_csv('Ncase.csv'), newline='', encoding='utf8') as c:
             data_reader = csv.DictReader(c)
             for row in data_reader:
-                Case.objects.create(policy_id =row['policy_id'],
+                Case.objects.create(case_id=row['case_id'],
+                                    province=row['province'],
+                                    city=row['city'],
+                                    group=row['group'],
+                                    infection_case=row['infection_case'],
+                                    confirmed=row['confirmed'],
+                                    )
+                '''Case.objects.create(policy_id =row['policy_id'],
                                     country =row['country'],
                                     type =row['type'],
                                     gov_policy =row['gov_policy'],
                                     detail =row['detail'],
                                     start_date =row['start_date'],
-                                    end_date =row['end_date'])
+                                    end_date =row['end_date'])'''

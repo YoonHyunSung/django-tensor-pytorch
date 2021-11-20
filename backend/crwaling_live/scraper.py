@@ -26,15 +26,11 @@ def covid_scraper():
     table_df = table_df.loc[:, ['구분', '사망', '재원 위중증', '신규 입원', '확진']]
 
     ic(table_df)
-    table_df = table_df.iloc[0:,:]
+    table_df = table_df.iloc[0:,1:]
     ic(table_df)
     table_df.rename(columns={'구분':'sortation','사망':'death','재원 위중증':'serious','신규 입원':'new_hospitalization','확진':'confirmed'},inplace=True)
-    '일일': 'today', '최근 7일간일평균': 'week_avg'
-    table_df['sortation'] = table_df['sortation']='일일'
     table_df.to_csv(vo.context + 'covid_case.csv', index=False)
     driver.close()
 
 def live():
     schedule.every().day.at("00:00").do(covid_scraper())
-if __name__ == '__main__':
-    covid_scraper()

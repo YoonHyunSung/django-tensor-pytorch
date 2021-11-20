@@ -3,11 +3,10 @@ from django.db import models
 
 
 class Crwaling_Live(models.Model):
-    sortation = models.AutoField()
-    death = models.AutoField()
-    serious = models.AutoField()
-    new_hospitalization = models.AutoField()
-    confirmed = models.AutoField()
+    death = models.TextField()
+    serious = models.TextField()
+    new_hospitalization = models.TextField()
+    confirmed = models.TextField()
 
 
     def __str__(self):
