@@ -1,6 +1,6 @@
 from django.db import models
-class Case(models.Model):
-    case_id = models.CharField(max_length=100, primary_key=True)
+class pred(models.Model):
+    date = models.CharField(max_length=100, primary_key=True)
     province = models.TextField()
     city = models.TextField()
     group = models.BooleanField()

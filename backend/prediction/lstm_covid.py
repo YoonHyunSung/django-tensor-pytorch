@@ -12,7 +12,6 @@ from icecream import ic
 from pandas.plotting import register_matplotlib_converters
 from torch import nn, optim
 
-
 class data_norminal():
 
     def create_sequences(data, seq_length):
@@ -34,6 +33,7 @@ class data_norminal():
     train_size = int(674*0.8)
     #674개의 지도학습용 데이터를 만들고 8:1:1로 분리하여 학습용 데이터, 검증용, 시험용으로사용한다.
     print(train_size)
+    X_pred, y_pred= X[:],y[:]
     X_train, y_train = X[:train_size], y[:train_size]
     X_val, y_val = X[train_size:train_size + 67], y[train_size:train_size + 67]
     X_test, y_test = X[train_size + 67:], y[train_size + 67:]
@@ -44,7 +44,8 @@ class data_norminal():
     MAX = X_train.max()
     def MinMaxScale(array, min, max):
         return (array - min) / (max - min)
-
+    X_pred =  MinMaxScale(X_pred, MIN, MAX)
+    y_pred = MinMaxScale(y_pred, MIN, MAX)
     X_train = MinMaxScale(X_train, MIN, MAX)
     y_train = MinMaxScale(y_train, MIN, MAX)
     X_val = MinMaxScale(X_val, MIN, MAX)
@@ -55,6 +56,8 @@ class data_norminal():
     def make_Tensor(array):
         return torch.from_numpy(array).float()
 
+    X_pred = make_Tensor(X_pred)
+    y_pred = make_Tensor(y_pred)
     X_train = make_Tensor(X_train)
     y_train = make_Tensor(y_train)
     X_val = make_Tensor(X_val)
@@ -151,12 +154,13 @@ class CovidPredictor(nn.Module):
         return model, train_hist, val_hist
 class create_model():
     def create(self):
+
         d = data_norminal()
         model = CovidPredictor(
                 n_features=1,
-                n_hidden=6,
+                n_hidden=64,
                 seq_len=d.seq_length,
-                n_layers=1
+                n_layers=4
             )
         model, train_hist, val_hist = CovidPredictor.train_model(
             model,
@@ -164,15 +168,15 @@ class create_model():
             d.y_train,
             d.X_val,
             d.y_val,
-            num_epochs=100,
+            num_epochs=200,
             verbose=10,
             patience=50
         )
-        pred_dataset  = d.X_test
+        pred_dataset = d.X_test
 
         with torch.no_grad():
             preds = []
-            for _ in range(len(pred_dataset)):
+            for _ in range(len(pred_dataset)+30):
                 model.reset_hidden_state()
                 y_test_pred = model(torch.unsqueeze(pred_dataset[_], 0))
                 pred = torch.flatten(y_test_pred).item()
@@ -188,38 +192,84 @@ class create_model():
 
         PATH = 'data/'
         torch.save(model,PATH+'pred_model.pth')
-        plt.plot(d.daily_cases.index[-len(d.y_test):],np.array(d.y_test) * d.MAX, label='True')
+        '''plt.plot(d.daily_cases.index[-len(d.y_test):],np.array(d.y_test) * d.MAX, label='True')
         plt.plot(d.daily_cases.index[-len(preds):],np.array(preds) * d.MAX, label='Pred')
+        plt.legend()'''
+        plt.plot(d.daily_cases.index[-len(d.y_test):], np.array(d.y_test) * d.MAX, label='True')
+        plt.plot(d.daily_cases.index[-len(preds):], np.array(preds) * d.MAX, label='Pred')
+        plt.xticks(rotation=45)
         plt.legend()
-        plt.savefig('data/simple_model.png')
+        plt.savefig('data/pred_model.png')
     def pred(self):
-        scaler = MinMaxScaler()
-        d = data_norminal
-        df = d.daily_cases
-        ic(df.columns)
-        #X_all = df[]
+        d = data_norminal()
         PATH = 'data/pred_model.pth'
         model = torch.load(PATH)
-        days = 30
-        pred_dataset = d.X_test
+        days = 60
+        pred_dataset = d.X_pred
 
-        for _ in range(days):
+        with torch.no_grad():
             preds = []
-            model.reset_hidden_state()
-            y_test_pred = model(torch.unsqueeze(pred_dataset[_], 0))
-            pred = torch.flatten(y_test_pred).item()
-            preds.append(pred)
-            new_seq = pred_dataset.numpy().flatten()
-            new_seq = np.append(new_seq, [pred])
-            new_seq = new_seq[1:]
-        plt.plot(np.array(d.y_test) * d.MAX, label='True')
-        plt.plot(np.array(preds) * d.MAX, label='Pred')
+            for _ in range(days):
+                model.reset_hidden_state()
+                y_test_pred = model(torch.unsqueeze(pred_dataset[_], 0))
+                pred = torch.flatten(y_test_pred).item()
+                preds.append(pred)
+        pred_values = np.array(preds) * d.MAX
+        pred_values_ceiled = list(pred_values.flatten())
+        predicted_cases = pred_values_ceiled
+        ic(predicted_cases)
+        predicted_index = pd.date_range(
+            start=d.daily_cases.index[-1],
+            periods=days + 1,
+            closed='right'
+        )
+        predicted_index = pd.to_datetime(predicted_index, format='%Y%m%d')
+
+        predicted_cases = pd.Series(
+            data=predicted_cases,
+            index=predicted_index
+        )
+
+
+        preds_ = pd.DataFrame(predicted_cases)
+        d.daily_cases.index = pd.to_datetime(d.daily_cases.index)
+        predicted_cases.to_csv('data/norminal_data/pred.csv')
+        plt.plot(predicted_cases, label='Predicted Daily Cases')
+        plt.legend();
+        ic(preds_)
+        plt.figure(figsize=(25, 5))
+        plt.plot(d.daily_cases['confirmed'].astype(int), label='Historical Daily Cases')
+        plt.plot(preds_, label='Predicted Daily Cases')
+        plt.xticks(rotation=90)
+        plt.title("Oversea Inflow Cofirmed")
+        plt.grid(axis='x')
         plt.legend()
-        plt.savefig('data/simple_model.png')
+        plt.plot(predicted_cases, label='Predicted Daily Cases')
+        plt.savefig('data/over_model.png')
+
+        '''pred_values_ceiled = d.y_pred
+        predicted_cases = pred_values_ceiled
+        predicted_cases
+        predicted_index = pd.date_range(
+            start=d.daily_cases.index[-1],
+            periods=days + 1,
+            closed='right'
+        )
+        predicted_index = pd.to_datetime(predicted_index, format='%Y%m%d')
+        predicted_cases = pd.Series(
+            data=predicted_cases,
+            index=predicted_index
+        )
+
+        plt.plot(predicted_cases, label='Predicted Daily Cases')
+        plt.legend();'''
+
+    def MAE(true, pred):
+        return np.mean(np.abs(true - pred))
 
 
 
 
 
 if __name__ == '__main__':
-    create_model().create()
+    create_model().pred()
